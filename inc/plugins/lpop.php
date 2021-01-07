@@ -56,7 +56,7 @@ function lpop_install()
         'title'         => 'Latest Posts on Profile',
         'description'   => 'Edit the settings for Latest Posts on Profile here.',
         'disporder'     => '1',
-        'isdefault'     => 'no',
+        'isdefault'     => '0',
     );
     $db->insert_query('settinggroups', $group);
     $gid = intval($db->insert_id());
@@ -131,7 +131,6 @@ function lpop_activate()
 
 	// Add template <tr><th>Thread</th><th>Forum</th><th># Posts</th><th>Date Posted</th></tr>
 	$template[] = array(
-		'tid'		=> 'NULL',
 		'title'		=> 'lpop_profile',
 		'template'	=> $db->escape_string('
 	        <table border="0" cellspacing="{$theme[\'borderwidth\']}" cellpadding="{$theme[\'tablespace\']}" class="tborder">
@@ -150,7 +149,6 @@ function lpop_activate()
 	);
 
 	$template[] = array(
-		'tid'		=> 'NULL',
 		'title'		=> 'lpop_row',
 		'template'	=> $db->escape_string('
 			<tr>
