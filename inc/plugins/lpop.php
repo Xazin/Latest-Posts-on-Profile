@@ -151,7 +151,7 @@ function lpop_activate()
 	$template[] = array(
 		'title'		=> 'lpop_row',
 		'template'	=> $db->escape_string('
-			<tr>
+			<tr class="trow2">
 				<td>{$thread}</td>
 				<td>{$forum}</td>
 				<td>{$postdate}</td>
